@@ -11,3 +11,9 @@ let contacts = [
 function addContact(name) {
   contacts.push({ name });
 }
+
+// Función para eliminar un contacto existente de la lista
+
+function deleteContact(name) {
+  contacts = contacts.filter(contact => contact.name !== name);
+}
