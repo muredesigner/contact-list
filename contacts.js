@@ -17,3 +17,10 @@ function addContact(name) {
 function deleteContact(name) {
   contacts = contacts.filter(contact => contact.name !== name);
 }
+
+// Función para imprimir los contactos presentes en la lista
+
+function printContacts() {
+  console.log("Contacts:");
+  contacts.forEach(contact => console.log(contact.name));
+}
