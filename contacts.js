@@ -5,3 +5,9 @@ let contacts = [
   {name: "Enedina Mora"},
   {name: "Andres Montenegro"},
 ]
+
+// Función para añadir un nuevo contacto a una lista
+
+function addContact(name) {
+  contacts.push({ name });
+}
