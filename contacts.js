@@ -24,3 +24,9 @@ function printContacts() {
   console.log("Contacts:");
   contacts.forEach(contact => console.log(contact.name));
 }
+
+// Ejemplo de utilización
+
+addContact("Rafael Montes");                   // Añade un contacto
+deleteContact("Enedina Mora");                 // Elimina un contacto
+printContacts();
