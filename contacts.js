@@ -1,32 +1,57 @@
-// Lista de contactos con datos predefinidos
+/* Ajusta las funciones de crear y eliminar un contacto para
+que puedan almacenar la siguiente información como objetos:
+id, nombres, apellidos, teléfono, ubicaciones, ciudad, dirección */
 
 let contacts = [
-  {name: "Simon Bastidas"},
-  {name: "Enedina Mora"},
-  {name: "Andres Montenegro"},
-]
+  {
+      id: 1,
+      firstName: 'Simon',
+      lastName: 'Bastidas',
+      phone: '1234567890',
+      location: {
+          city: 'Tachira',
+          address: 'Av. Carabobo'
+      }
+  },
+  {
+      id: 2,
+      firstName: 'Enedina',
+      lastName: 'Mora',
+      phone: '098765421',
+      location: {
+          city: 'Portuguesa',
+          address: 'Av. Hilandera'
+      }
+  }
+];
 
-// Función para añadir un nuevo contacto a una lista
+/* función para añadir un nuevo contacto a la lista pasando el id, 
+firstName, lastName, teléfono, ciudad y dirección como argumentos. */
 
-function addContact(name) {
-  contacts.push({ name });
+function addContact(id, firstName, lastName, phone, city, address) {
+  contacts.push({
+      id: id,
+      firstName: firstName,
+      lastName: lastName,
+      phone: phone,
+      location: {
+          city: city,
+          address: address
+      }
+  });
 }
 
-// Función para eliminar un contacto existente de la lista
+/* función para eliminar un contacto existente de la lista se
+puede utilizar pasando el id del contacto que vayamos a eliminar. */
 
-function deleteContact(name) {
-  contacts = contacts.filter(contact => contact.name !== name);
+function deleteContact(id) {
+  contacts = contacts.filter(contact => contact.id !== id);
 }
 
-// Función para imprimir los contactos presentes en la lista
+/* Funcion para imprimir en la consola el nombre y apellidos
+de los contactos que esten presentes en la lista. */
 
 function printContacts() {
-  console.log("Contacts:");
-  contacts.forEach(contact => console.log(contact.name));
+  console.log('Contacts:');
+  contacts.forEach(contact => console.log(`${contact.firstName} ${contact.lastName}`));
 }
-
-// Ejemplo de utilización
-
-addContact("Rafael Montes");                   // Añade un contacto
-deleteContact("Enedina Mora");                 // Elimina un contacto
-printContacts();
